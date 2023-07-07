@@ -6,7 +6,7 @@ encrypt_msg = []
 # decryption info 
 A = [1, 3, 5, 7, 9, 11, 15, 17, 19, 21, 23, 25]
 B = range(0, 26)
-A_inv = []
+
 decrypt_msg = []
 
 def user_text():
