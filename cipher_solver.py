@@ -56,12 +56,16 @@ def decrypt():
     print("Number of ways:", len(decrypt_msg))
         
 def main():
-    user_choice = input('1. Encrypt?\n2. Decrypt?\n')
-    
-    if user_choice == '1':
-        encrypt()    
-    elif user_choice == '2':
-        decrypt()
+    for i in range(2):
+        user_choice = input('1. Encrypt?\n2. Decrypt?\n')
+        
+        if user_choice == '1':
+            encrypt()    
+        elif user_choice == '2':
+            decrypt()
+        
+        print('\n')
+
 
 main()
 
