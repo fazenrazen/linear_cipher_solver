@@ -37,8 +37,8 @@ def encrypt():
         encrypt_letter = a_key * letters + b_key
         encrypt_letter = (encrypt_letter % 26) + 97
         encrypt_msg.append(chr(encrypt_letter))
-        
-    print(encrypt_msg)
+
+    print(''.join(encrypt_msg))
     
 def decrypt():
     word = user_text()
@@ -50,9 +50,9 @@ def decrypt():
                 decrypted_letter = a * (letter - b) % 26
                 decrypted_letter = decrypted_letter + 97
                 decrypted_word += chr(decrypted_letter)
-            decrypt_msg.append(decrypted_word)
+            decrypt_msg.append(decrypted_word + '\n')
     
-    print(decrypt_msg)
+    print(''.join(decrypt_msg))
     print("Number of ways:", len(decrypt_msg))
         
 def main():
