@@ -4,8 +4,9 @@ import array
 # stores the converted encryption 
 encrypt_msg = []
 # decryption info 
-A = [1, 3, 5, 7, 9, 11, 13, 17, 19, 21, 23, 25]
+A = [1, 3, 5, 7, 9, 11, 15, 17, 19, 21, 23, 25]
 B = range(0, 26)
+A_inv = []
 decrypt_msg = []
 
 def user_text():
@@ -47,7 +48,7 @@ def decrypt():
         for b in B:
             decrypted_word = ""
             for letter in word:
-                decrypted_letter = a * (letter - b) % 26
+                decrypted_letter = pow(a, -1, 26) * (letter - b) % 26
                 decrypted_letter = decrypted_letter + 97
                 decrypted_word += chr(decrypted_letter)
             decrypt_msg.append(decrypted_word + '\n')
@@ -63,7 +64,7 @@ def main():
             encrypt()    
         elif user_choice == '2':
             decrypt()
-        
+
         print('\n')
 
 
