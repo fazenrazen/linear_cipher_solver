@@ -24,10 +24,13 @@ def user_text():
         encode_letter = ord(letters) - 97
         text_to_numbers.append(encode_letter)
     
+
     return text_to_numbers
     
 def encrypt():
     word = user_text()
+    print("\nCoefficient of A should be prime w/ 26 (1, 3, 7...)")
+    print("Coefficient of B can be any positive integer\n")
     a_key = input("What is the A key? ")
     b_key = input("What is the B key? ")
     
@@ -39,11 +42,12 @@ def encrypt():
         encrypt_letter = (encrypt_letter % 26) + 97
         encrypt_msg.append(chr(encrypt_letter))
 
-    print(''.join(encrypt_msg))
+    # Printing the Encrypted message
+    print("Your encrypted message is " + ''.join(encrypt_msg))
     
 def decrypt():
     word = user_text()
-    
+
     for a in A:
         for b in B:
             decrypted_word = ""
@@ -53,13 +57,15 @@ def decrypt():
                 decrypted_word += chr(decrypted_letter)
             decrypt_msg.append(decrypted_word + '\n')
     
+    # Printing the decrypted words
+    print("Your decrypted words are: ")
     print(''.join(decrypt_msg))
     print("Number of ways:", len(decrypt_msg))
         
 def main():
     for i in range(2):
-        user_choice = input('1. Encrypt?\n2. Decrypt?\n')
-        
+        user_choice = input('1. Encrypt?\n2. Decrypt?\nEnter 1 or 2: ')
+
         if user_choice == '1':
             encrypt()    
         elif user_choice == '2':
