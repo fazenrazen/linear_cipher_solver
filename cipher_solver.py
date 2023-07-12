@@ -35,6 +35,8 @@ encrypt_msg = []
 A = [1, 3, 5, 7, 9, 11, 15, 17, 19, 21, 23, 25]
 B = range(0, 26)
 
+decrypt_msg = []
+
 def user_text():
     # take the users input
     user_text = input('Enter text: ').lower().replace(" ", "")
@@ -74,8 +76,6 @@ def encrypt():
 def decrypt():
     word = user_text()
     
-    decrypt_msg = []
-    
     # this is a slow implementation, fix this 
     for a in A:
         for b in B:
@@ -96,9 +96,18 @@ def decrypt():
     # print("Number of ways:", len(decrypt_msg))
 
 def find_text(decrypt_msg):
-    print("Your decrypted words are: ")
-    print(''.join(decrypt_msg))
-    print("Number of ways:", len(decrypt_msg))
+    find_word = user_text()
+    
+    for words in decrypt_msg:
+        if find_word == words:
+            print("I FOUND YOUR WORD! Is it " + find_word)
+        else:
+            print("I couldnt find your word sadly :(")
+            
+            
+    # print("Your decrypted words are: ")
+    # print(''.join(decrypt_msg))
+    # print("Number of ways:", len(decrypt_msg))
 
         
         
