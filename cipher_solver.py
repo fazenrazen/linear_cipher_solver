@@ -4,9 +4,8 @@ import array
 """
 FEATURE REQUESTS 
 Need to fix
-2. Error checking User input of A key 
-3. Use a dif file for adding the encryption details
-4. Print the A and B Keys
+1. Use a dif file for adding the encryption details
+2. Print the A and B Keys
 
 Nice to haves
 1. Cipher a page with different ciphers
