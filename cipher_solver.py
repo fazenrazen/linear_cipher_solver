@@ -4,8 +4,7 @@ import array
 """
 FEATURE REQUESTS 
 Need to fix
-1. Use a dif file for adding the encryption details
-2. Print the A and B Keys
+
 
 Nice to haves
 1. Cipher a page with different ciphers
@@ -25,7 +24,6 @@ Nice to haves
 # encrypt with multiple layers of linear cipher
 # Auto key Encrypter 
 # V cipher with keyword solver
-
 
 # decryption info 
 A = [1, 3, 5, 7, 9, 11, 15, 17, 19, 21, 23, 25]
@@ -105,28 +103,10 @@ def decrypt():
                 decrypted_word += chr(decrypted_letter)
             decrypt_msg.append(decrypted_word + ' a key: ' + str(a) + ' b key: ' + str(b) + '\n')
     
-    
-    # Finding the text
-    # find_text(decrypt_msg)
-    
     # Printing the decrypted words
     print("Your decrypted words are: ")
     print(''.join(decrypt_msg))
     print("Number of ways:", len(decrypt_msg))
-
-# def find_text(decrypt_msg):
-#     find_word = user_text()
-    
-#     for words in decrypt_msg:
-#         if find_word == words:
-#             print("I FOUND YOUR WORD! Is it " + find_word)
-#         else:
-#             print("I couldnt find your word sadly :(")
-            
-            
-    # print("Your decrypted words are: ")
-    # print(''.join(decrypt_msg))
-    # print("Number of ways:", len(decrypt_msg))
   
 def main():
     
