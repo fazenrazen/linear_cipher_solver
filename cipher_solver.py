@@ -103,7 +103,7 @@ def decrypt():
                 decrypted_letter = pow(a, -1, 26) * (letter - b) % 26
                 decrypted_letter = decrypted_letter + 97
                 decrypted_word += chr(decrypted_letter)
-            decrypt_msg.append(decrypted_word + '\n')
+            decrypt_msg.append(decrypted_word + ' a key: ' + str(a) + ' b key: ' + str(b) + '\n')
     
     
     # Finding the text
