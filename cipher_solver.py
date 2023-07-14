@@ -4,7 +4,6 @@ import array
 """
 FEATURE REQUESTS 
 Need to fix
-1. Fix the Coprimes list from A
 2. Error checking User input of A key 
 3. Use a dif file for adding the encryption details
 4. Print the A and B Keys
@@ -15,7 +14,6 @@ Nice to haves
 3. Auto key Encrypter 
 4. V cipher with keyword solver
 5. RSA implementation
-6. 
 """
 
 # Need to Fix
@@ -29,8 +27,7 @@ Nice to haves
 # Auto key Encrypter 
 # V cipher with keyword solver
 
-# stores the converted encryption 
-encrypt_msg = []
+
 # decryption info 
 A = [1, 3, 5, 7, 9, 11, 15, 17, 19, 21, 23, 25]
 B = range(0, 26)
@@ -54,19 +51,40 @@ def user_text():
     
 
     return text_to_numbers
-    
+
+def gcd(p,q):
+# Create the gcd of two positive integers.
+    while q != 0:
+        p, q = q, p%q
+    return p
+
+def is_coprime(x, y):
+    return gcd(x, y) == 1
+   
 def encrypt():
     print('\nEncrypting!\n')
     
+    # stores the converted encryption 
+    encrypt_msg = []
+    
     word = user_text()
-    print("Coefficient of A should be prime w/ 26 (1, 3, 7...)")
+    print("\nCoefficient of A should be prime w/ 26 (1, 3, 7...)")
     print("Coefficient of B can be any positive integer\n")
-    a_key = input("What is the A key? ")
-    b_key = input("What is the B key? ")
     
-    a_key = int(a_key)
-    b_key = int(b_key)
+    a_key = int(input("What is the A key? "))
+    b_key = int(input("What is the B key? "))
     
+    a_coprime = bool() 
+
+    # Checks if the A key is Coprime with 26
+    while a_coprime != True:
+        a_coprime = is_coprime(a_key, 26)
+        
+        if(a_coprime == False):
+            a_key = print('\nA_key is NOT coprime with 26\n')
+            a_key = int(input('Reenter A_key: '))
+    
+    # Encryption Algorithm
     for letters in word:
         encrypt_letter = a_key * letters + b_key
         encrypt_letter = (encrypt_letter % 26) + 97
@@ -129,10 +147,6 @@ def main():
             encrypt()    
         elif user_input == '2':
             decrypt()
-        
         print('\n')
     
-    
 main()
-
-
