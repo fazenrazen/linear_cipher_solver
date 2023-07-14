@@ -88,21 +88,21 @@ def decrypt():
     
     
     # Finding the text
-    find_text(decrypt_msg)
+    # find_text(decrypt_msg)
     
     # Printing the decrypted words
-    # print("Your decrypted words are: ")
-    # print(''.join(decrypt_msg))
-    # print("Number of ways:", len(decrypt_msg))
+    print("Your decrypted words are: ")
+    print(''.join(decrypt_msg))
+    print("Number of ways:", len(decrypt_msg))
 
-def find_text(decrypt_msg):
-    find_word = user_text()
+# def find_text(decrypt_msg):
+#     find_word = user_text()
     
-    for words in decrypt_msg:
-        if find_word == words:
-            print("I FOUND YOUR WORD! Is it " + find_word)
-        else:
-            print("I couldnt find your word sadly :(")
+#     for words in decrypt_msg:
+#         if find_word == words:
+#             print("I FOUND YOUR WORD! Is it " + find_word)
+#         else:
+#             print("I couldnt find your word sadly :(")
             
             
     # print("Your decrypted words are: ")
