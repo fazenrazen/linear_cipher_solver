@@ -5,7 +5,6 @@ import array
 FEATURE REQUESTS 
 Need to fix
 
-
 Nice to haves
 1. Cipher a page with different ciphers
 2. Encrypt with multiple layers of linear cipher
@@ -13,17 +12,6 @@ Nice to haves
 4. V cipher with keyword solver
 5. RSA implementation
 """
-
-# Need to Fix
-# fix the coprimes of A list into a loop
-# Error check to user if the number is coprime for A
-# add the ciphers in a different file 
-# cipher a page
-
-# Nice to haves
-# encrypt with multiple layers of linear cipher
-# Auto key Encrypter 
-# V cipher with keyword solver
 
 # decryption info 
 A = [1, 3, 5, 7, 9, 11, 15, 17, 19, 21, 23, 25]
