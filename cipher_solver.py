@@ -56,8 +56,10 @@ def user_text():
     return text_to_numbers
     
 def encrypt():
+    print('\nEncrypting!\n')
+    
     word = user_text()
-    print("\nCoefficient of A should be prime w/ 26 (1, 3, 7...)")
+    print("Coefficient of A should be prime w/ 26 (1, 3, 7...)")
     print("Coefficient of B can be any positive integer\n")
     a_key = input("What is the A key? ")
     b_key = input("What is the B key? ")
@@ -108,20 +110,29 @@ def decrypt():
     # print("Your decrypted words are: ")
     # print(''.join(decrypt_msg))
     # print("Number of ways:", len(decrypt_msg))
-
-        
-        
+  
 def main():
-    for i in range(2):
-        user_choice = input('1. Encrypt?\n2. Decrypt?\nEnter 1 or 2: ')
-
-        if user_choice == '1':
+    
+    # Initial user choice
+    user_input = ''
+    
+    # loop choices until exit
+    while user_input != '3':
+        print('1. Encrypt?')
+        print('2. Decrypt?')
+        print('3. Exit\n')
+            
+        # Take User_input
+        user_input = input('Enter 1, 2, or 3: ')
+        
+        if user_input == '1':
             encrypt()    
-        elif user_choice == '2':
+        elif user_input == '2':
             decrypt()
-
+        
         print('\n')
-
+    
+    
 main()
 
 
